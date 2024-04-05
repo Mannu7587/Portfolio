@@ -107,7 +107,7 @@ export default function Component() {
             </p>
           </div>
           <div className="grid gap-6">
-            <div className="bg-gray-800 p-4 rounded-lg text-white">
+            <div className="bg-gray-800 p-4 rounded-lg border-4 border-yellow-500 bg-emerald-950 text-white">
               <div className="flex items-center gap-2">
                 <img
                   alt="Company Logo"
@@ -200,7 +200,7 @@ export default function Component() {
             </p>
           </div>
           <div className="grid gap-6">
-            <div className="bg-gray-800 p-4 rounded-lg text-white">
+            <div className="bg-gray-800 p-4 rounded-lg border-4 border-yellow-500 bg-[#1A1E1E] text-white">
               <div className="flex items-center gap-2">
                 <img
                   alt="Company Logo"
@@ -226,7 +226,7 @@ export default function Component() {
                 </div>
               </div>
             </div>
-            <div className="bg-gray-800 p-4 rounded-lg text-white">
+            <div className="bg-gray-800 p-4 rounded-lg border-4 border-yellow-500 bg-[#1A1E1E] text-white">
               <div className="flex items-center gap-2">
                 <img
                   alt="Company Logo"
