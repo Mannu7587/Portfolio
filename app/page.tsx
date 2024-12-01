@@ -86,7 +86,7 @@ export default function Component() {
               <p className="max-w-prose text-gray-500 md:text-xl/relaxed dark:text-gray-400 text-white">
               Driven job seeker with a diverse skill set and experience and a passion 
               for continuous learning, seeking new opportunities to grow and contribute 
-              to a dynamic team. I bring 1+ year of Experience working in AI and SaaS domain.
+              to a dynamic team. I bring 2+ year of Experience working in AI, SaaS & Fintech domain.
               </p>
               <Button className="w-36 bg-blue-500 text-white" size="sm">
                 <Link className="underline-none" href="https://drive.google.com/file/d/1OHze8h2XXpOLVrh6xnQewYxB4imCaoy5/view?pli=1">
@@ -176,14 +176,19 @@ export default function Component() {
               <p className="text-xl text-gray-500 dark:text-gray-400 text-white">Artificial Intelligence, Machine Learning, Neural Networks, Tensorflow, Pytorch, Keras, Anaconda, YOLOv8, Hugging Face</p>
             </div>
             <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-white">Tools & Technologies</h3>
+              <h3 className="text-2xl font-bold text-white">Cloud Technologies</h3>
               <div />
-              <p className="text-xl text-gray-500 dark:text-gray-400 text-white">Git, Docker, Kubernetes, CI/CD, Rest Assured, Cypress, Jira, MySQL, CVAT, MakeSense.ai</p>
+              <p className="text-xl text-gray-500 dark:text-gray-400 text-white">CI/CD, Docker, Jenkins, Terraform, Amazon Web Service (AWS)</p>
             </div>
             <div className="space-y-2">
               <h3 className="text-xl font-bold text-white">Coursework</h3>
               <div />
               <p className="text-xl text-gray-500 dark:text-gray-400 text-white">Data Structures, Algorithms, Operating Systems, Object Oriented Design, C-programming, Database Management Systems</p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-bold text-white">Tools</h3>
+              <div />
+              <p className="text-xl text-gray-500 dark:text-gray-400 text-white">GitHub, Rest Assured, Cypress, Linux, MySQL, Jira, CVAT, MakeSense.ai</p>
             </div>
             <div className="space-y-2">
               <h3 className="text-xl font-bold text-white">Soft Skills</h3>
@@ -196,10 +201,36 @@ export default function Component() {
           <div className="space-y-4">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">My Experience</h1>
             <p className="max-w-prose text-gray-500 md:text-xl/relaxed dark:text-gray-400 text-white">
-            Reflecting on a year of impactful contributions in the realm of software engineering.
+            Reflecting impactful contributions in the realm of software engineering.
             </p>
           </div>
           <div className="grid gap-6">
+          <div className="bg-gray-800 p-4 rounded-lg border-4 border-yellow-500 bg-[#1A1E1E] text-white">
+              <div className="flex items-center gap-2">
+                <img
+                  alt="Company Logo"
+                  className="aspect-[1/1] object-cover object-center rounded-full "
+                  height="60"
+                  src="/Eduvanz-logo.jpg"
+                  style={{
+                    aspectRatio: "80/80",
+                    objectFit: "cover",
+                  }}
+                  width="60"
+                />
+                <h3 className="text-2xl font-bold sm:text-2xl md:text-2xl text-white">Eduvanz Finance</h3>
+              </div>
+              <p className="text-xl font-bold">Software Development Engineer (SDE-1)</p>
+              <div className="flex items-center gap-2">
+                <div>
+                  <p className="text-l">June, 2024 - Present || Mumbai, Maharashtra, India</p>
+                  <p className="text-m">~ Automated AWS infrastructure provisioning with Terraform, reducing deployment time by 83% (from 3 hours to 30 minutes) and enhancing reliability by eliminating manual configuration errors; implemented observability using Grafana for improved monitoring and insights.</p>
+                  <p className="text-m">~ Designed and developed Jenkins CI/CD pipelines for Salesforce deployments, automating pull requests, test case execution, and seamless sandbox-to-production code transitions.</p>
+                  <p className="text-m">~ Led an end-to-end data migration from a monolithic system to third-party applications, utilizing SQL to seamlessly transfer over 1 million records with zero data loss.</p>
+                  <p className="text-m">~ Languages and technologies being used Python, SQL, Redshift, Shellscript, Terraform, Jenkins, Jira, GitHub.</p>
+                </div>
+              </div>
+            </div>
             <div className="bg-gray-800 p-4 rounded-lg border-4 border-yellow-500 bg-[#1A1E1E] text-white">
               <div className="flex items-center gap-2">
                 <img
@@ -218,11 +249,11 @@ export default function Component() {
               <p className="text-xl font-bold">Software Engineer Intern </p>
               <div className="flex items-center gap-2">
                 <div>
-                  <p className="text-l">July, 2023 - January, 2024 || Bengaluru, Karnataka, India</p>
+                  <p className="text-l">July, 2023 - May, 2024 || Bengaluru, Karnataka, India</p>
                   <p className="text-m">~ Played a key role in end-to-end feature development at Harness Next Gen, focusing on test plan creation, execution, and automation for critical test cases.</p>
-                  <p className="text-m">~ Actively contributed to comprehensive feature release validations in Harness Next Gen by participating in bug fixes and fulfilling oncallresponsibilities. Additionally, successfully boosted code coverage for multiple features from 60% to 90%, enhancing the overallrobustness and reliability of the software</p>
-                  <p className="text-m">~ Revamped Harness documentation and authored knowledge based articles forinclusion in the Harness Developer hub, enhancing user understanding and community engagement</p>
-                  <p className="text-m">~ Languages and technologies being used Java, Spring Boot, Junit, Mockito, Docker, Microservices, Selenium, Rest Assured, Testim, Cypress, Jira, GitHub</p>
+                  <p className="text-m">~ Actively contributed to comprehensive feature release validations in Harness Next Gen by participating in bug fixes and fulfilling oncallresponsibilities. Additionally, successfully boosted code coverage for multiple features from 60% to 90%, enhancing the overallrobustness and reliability of the software.</p>
+                  <p className="text-m">~ Revamped Harness documentation and authored knowledge based articles forinclusion in the Harness Developer hub, enhancing user understanding and community engagement.</p>
+                  <p className="text-m">~ Languages and technologies being used Java, Spring Boot, Junit, Mockito, Docker, Microservices, Selenium, Rest Assured, Testim, Cypress, Jira, GitHub.</p>
                 </div>
               </div>
             </div>
@@ -247,7 +278,7 @@ export default function Component() {
                   <p className="text-l">January, 2023 - June, 2023 || Gurugram, Hrayana, India</p>
                   <p className="text-m">~ Developed and implemented an automated route planning model for VVIP convoys, integrating geospatial data, threat object detection, crowd management, and lane segmentation. Enhanced security through real-time System updates, secure communication, and continuous improvement measures.</p>
                   <p className="text-m">~ Developed an AI Border Surveillance system forthe Indian Army, integrating object detection, people counting, and face recognition. The system operates on drones, thermal, and optical cameras, bolstering security measures in border areas through advanced monitoring and threat detection capabilities.</p>
-                  <p className="text-m">~ Languages and technologies being used Python, Machine Learning, Deep Learning, Tensorflow, Pytorch, LLMs, Yolov8, DeepFace, RetinaFace, ArcFace, OpenCV, Docker, GitHub</p>
+                  <p className="text-m">~ Languages and technologies being used Python, Machine Learning, Deep Learning, Tensorflow, Pytorch, LLMs, Yolov8, DeepFace, RetinaFace, ArcFace, OpenCV, Docker, GitHub.</p>
                   
                 </div>
               </div>
