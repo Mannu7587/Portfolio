@@ -89,7 +89,7 @@ export default function Component() {
               to a dynamic team. I bring 2+ year of Experience working in AI, SaaS & Fintech domain.
               </p>
               <Button className="w-36 bg-blue-500 text-white" size="sm">
-                <Link className="underline-none" href="https://drive.google.com/file/d/1OHze8h2XXpOLVrh6xnQewYxB4imCaoy5/view?pli=1">
+                <Link className="underline-none" href="https://drive.google.com/file/d/19A6XmWKGwAId-WaVWtIrmV14iUnWqmml/view?usp=sharing">
                   Download CV
                 </Link>
               </Button>
