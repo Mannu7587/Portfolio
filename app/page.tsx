@@ -1,367 +1,690 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/KG9mZwLBNlb
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Link2Icon } from "@radix-ui/react-icons"
+import { motion } from "framer-motion"
 
-export default function Component() {
+/* ===========================
+   CREATIVE GLASS CARD
+=========================== */
+const Card = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div
-      className="flex flex-col min-h-[100dvh] dark"
-      style={{
-        fontFamily: "Times New Roman",
+    <motion.div
+      whileHover={{
+        rotateX: 4,
+        rotateY: -4,
+        scale: 1.02,
       }}
+      transition={{ type: "spring", stiffness: 180, damping: 15 }}
+      className="
+        relative p-8 rounded-3xl 
+        bg-gradient-to-br from-white/10 via-white/5 to-transparent
+        backdrop-blur-2xl
+        border border-white/20
+        shadow-[0_10px_40px_rgba(0,0,0,0.4)]
+        overflow-hidden
+      "
+      style={{ transformStyle: "preserve-3d" }}
     >
-      <header className="px-4 lg:px-6 h-14 flex items-center bg-[#4e1285] from-gray-800 to-gray-900">
-        <Link className="flex items-center justify-center" href="#">
-        <img
-          alt="User"
-          className="aspect-[1/1] object-cover object-center rounded-full"
-          height="50"
-          src="/profile-pic.png"
-          width="50"
-        />
-          <span className="sr-only text-white">Acme Inc</span>
-        </Link>
-        <nav className="ml-auto flex gap-4 lg:gap-6">
-          <Link className="text-sm font-medium hover:underline underline-offset-4 text-white" href="https://github.com/Mannu7587">
-          <img
-          alt="User"
-          className="aspect-[1/1] object-cover object-center rounded-full"
-          height="50"
-          src="/github.png"
-          width="50"
-        />
-          <span className="sr-only text-white">Acme Inc</span>
-          </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4 text-white" href="https://leetcode.com/Mannu7587/">
-          <img
-          alt="User"
-          className="aspect-[1/1] object-cover object-center rounded-full"
-          height="50"
-          src="/leetcode.jpg"
-          width="50"
-        />
-          <span className="sr-only text-white">Acme Inc</span>
-          </Link>
-
-          <Link className="text-sm font-medium hover:underline underline-offset-4 text-white" href="https://codeforces.com/profile/arora.apoorv">
-          <img
-          alt="User"
-          className="aspect-[1/1] object-cover object-center rounded-full"
-          height="50"
-          src="/codeforces.jpg"
-          width="50"
-        />
-          <span className="sr-only text-white">Acme Inc</span>
-          </Link>
-        </nav>
-      </header>
-      <main className="grid gap-12 lg:gap-24 flex-1 bg-[#051622] from-gray-700 to-gray-800">
-        <section className="grid gap-4 px-4 md:px-6 mt-5">
-          <div className="flex flex-col min-[400px]:grid md:min-[600px] md:grid-cols-3 md:items-center md:gap-8 lg:gap-12">
-            <div className="mx-auto overflow-hidden rounded-full border-4 border-yellow-500 md:aspect-[1/1] lg:aspect-[1/1]">
-              <img
-                alt="User"
-                className="aspect-[1/1] object-cover object-center rounded-full"
-                height="400"
-                src="/about-pic.png"
-                width="400"
-              />
-            </div>
-            <div className="space-y-4 md:col-span-2">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-white">
-                  Apoorv Arora
-                </h2>
-                <p className="text-gray-500 dark:text-gray-400 text-white">Software Engineer</p>
-              </div>
-              <p className="max-w-prose text-gray-500 md:text-xl/relaxed dark:text-gray-400 text-white">
-              Driven job seeker with a diverse skill set and experience and a passion 
-              for continuous learning, seeking new opportunities to grow and contribute 
-              to a dynamic team. I bring 2+ year of Experience working in AI, SaaS & Fintech domain.
-              </p>
-              <Button className="w-36 bg-blue-500 text-white" size="sm">
-                <Link className="underline-none" href="https://drive.google.com/file/d/19A6XmWKGwAId-WaVWtIrmV14iUnWqmml/view?usp=sharing">
-                  Download CV
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-        
-
-
-        <section className="grid gap-4 px-4 md:px-6">
-          <div className="space-y-4">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">Educational Qualifications</h1>
-            <p className="max-w-prose text-gray-500 md:text-xl/relaxed dark:text-gray-400 text-white">
-            Showcasing my academic accomplishments and educational qualifications:
-            </p>
-          </div>
-          <div className="grid gap-6">
-            <div className="bg-gray-800 p-4 rounded-lg border-4 border-yellow-500 bg-emerald-950 text-white">
-              <div className="flex items-center gap-2">
-                <img
-                  alt="Company Logo"
-                  className="2rem"
-                  height="100"
-                  src="/project-1.png"
-                  width="100"
-                />
-                <div className="left">
-                <h1 className="text-2xl font-bold sm:text-2xl md:text-2xl text-white" >National Institute of Technology (NIT), Uttarakhand</h1>
-                <h2 className="text-xl font-bold sm:text-xl md:text-xl text-white">Bachelor of Technology</h2>
-                <p>Electrical and Electronics Engineering</p>
-                <p>CGPA: 7.32/10 from August, 2019 to July, 2023</p>
-              </div>
-              
-              </div>
-
-              <div>
-                <h1 className="text-xl font-bold">Clubs and Societies:</h1>
-                <p>~ Student Placement Representative      (August, 2022 to December, 2022)</p>
-                <p>~ General Secretary Adventure Club NIT- Uttarakhand      (August, 2022 to July, 2023)</p>
-                <p>~ Vice President Newton School Coding Club NIT- Uttarakhand      (August, 2022 to July, 2023)</p>
-                <p>~ Team Lead SAE Club NIT- Uttarakhand      (August, 2021 to July, 2022)</p>
-                <p>~ Associate Member Sports Club NIT- Uttarakhand      (August, 2019 to July, 2020)</p>
-                <h1 className="text-xl font-bold">Awards and Achievements:</h1>
-                <p>~ Finalist at Valorant E-Sports Championship Organized by Rendezvous IIT Delhi      (March, 2023)</p>
-                <p>~ 1st Place Intra-NIT Valorant E-Sports Championship     (November, 2022)</p>
-                <p>~ 2nd Place Intra-NIT Volleyball Tournament      (October, 2022)</p>
-                <p>~ Runner Up Photography Contest NIT- Uttarakhand      (November, 2019)</p>
-
-
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-
-
-        <section className="grid gap-4 px-4 md:px-6">
-          <div className="space-y-4">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">Skill Set</h1>
-            <p className="max-w-prose text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 text-white">
-            Demonstrating proficiency in essential skills and competencies.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-white">Languages</h3>
-              <div />
-              <p className="text-xl text-gray-500 dark:text-gray-400 text-white">Java, Python, C++, JavaScript, SQL</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-white">Frontend</h3>
-              <div />
-              <p className="text-xl text-gray-500 dark:text-gray-400 text-white">CSS, HTML, React.js, Bootstrap, Tailwind CSS, GUI tkinter, Streamlite</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-white">Backend</h3>
-              <div />
-              <p className="text-xl text-gray-500 dark:text-gray-400 text-white">SpringBoot, Django, Flask, Node.js</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-white">Data Science</h3>
-              <div />
-              <p className="text-xl text-gray-500 dark:text-gray-400 text-white">Artificial Intelligence, Machine Learning, Neural Networks, Tensorflow, Pytorch, Keras, Anaconda, YOLOv8, Hugging Face</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-white">Cloud Technologies</h3>
-              <div />
-              <p className="text-xl text-gray-500 dark:text-gray-400 text-white">CI/CD, Docker, Jenkins, Terraform, Amazon Web Service (AWS)</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-xl font-bold text-white">Coursework</h3>
-              <div />
-              <p className="text-xl text-gray-500 dark:text-gray-400 text-white">Data Structures, Algorithms, Operating Systems, Object Oriented Design, C-programming, Database Management Systems</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-xl font-bold text-white">Tools</h3>
-              <div />
-              <p className="text-xl text-gray-500 dark:text-gray-400 text-white">GitHub, Rest Assured, Cypress, Linux, MySQL, Jira, CVAT, MakeSense.ai</p>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-xl font-bold text-white">Soft Skills</h3>
-              <div />
-              <p className="text-xl text-gray-500 dark:text-gray-400 text-white">Leadership, Team Mangement, Collaboration, Negotiation, Strategic Thinking, Problem Solving</p>
-            </div>
-          </div>
-        </section>
-        <section className="grid gap-4 px-4 md:px-6">
-          <div className="space-y-4">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">My Experience</h1>
-            <p className="max-w-prose text-gray-500 md:text-xl/relaxed dark:text-gray-400 text-white">
-            Reflecting impactful contributions in the realm of software engineering.
-            </p>
-          </div>
-          <div className="grid gap-6">
-          <div className="bg-gray-800 p-4 rounded-lg border-4 border-yellow-500 bg-[#1A1E1E] text-white">
-              <div className="flex items-center gap-2">
-                <img
-                  alt="Company Logo"
-                  className="aspect-[1/1] object-cover object-center rounded-full "
-                  height="60"
-                  src="/Eduvanz-logo.jpg"
-                  style={{
-                    aspectRatio: "80/80",
-                    objectFit: "cover",
-                  }}
-                  width="60"
-                />
-                <h3 className="text-2xl font-bold sm:text-2xl md:text-2xl text-white">Eduvanz Finance</h3>
-              </div>
-              <p className="text-xl font-bold">Software Development Engineer (SDE-1)</p>
-              <div className="flex items-center gap-2">
-                <div>
-                  <p className="text-l">June, 2024 - Present || Mumbai, Maharashtra, India</p>
-                  <p className="text-m">~ Automated AWS infrastructure provisioning with Terraform, reducing deployment time by 83% (from 3 hours to 30 minutes) and enhancing reliability by eliminating manual configuration errors; implemented observability using Grafana for improved monitoring and insights.</p>
-                  <p className="text-m">~ Designed and developed Jenkins CI/CD pipelines for Salesforce deployments, automating pull requests, test case execution, and seamless sandbox-to-production code transitions.</p>
-                  <p className="text-m">~ Led an end-to-end data migration from a monolithic system to third-party applications, utilizing SQL to seamlessly transfer over 1 million records with zero data loss.</p>
-                  <p className="text-m">~ Languages and technologies being used Python, SQL, Redshift, Shellscript, Terraform, Jenkins, Jira, GitHub.</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-gray-800 p-4 rounded-lg border-4 border-yellow-500 bg-[#1A1E1E] text-white">
-              <div className="flex items-center gap-2">
-                <img
-                  alt="Company Logo"
-                  className="aspect-[1/1] object-cover object-center rounded-full "
-                  height="60"
-                  src="/Harness-logo.jpeg"
-                  style={{
-                    aspectRatio: "80/80",
-                    objectFit: "cover",
-                  }}
-                  width="60"
-                />
-                <h3 className="text-2xl font-bold sm:text-2xl md:text-2xl text-white">Harness.io</h3>
-              </div>
-              <p className="text-xl font-bold">Software Engineer Intern </p>
-              <div className="flex items-center gap-2">
-                <div>
-                  <p className="text-l">July, 2023 - May, 2024 || Bengaluru, Karnataka, India</p>
-                  <p className="text-m">~ Played a key role in end-to-end feature development at Harness Next Gen, focusing on test plan creation, execution, and automation for critical test cases.</p>
-                  <p className="text-m">~ Actively contributed to comprehensive feature release validations in Harness Next Gen by participating in bug fixes and fulfilling oncallresponsibilities. Additionally, successfully boosted code coverage for multiple features from 60% to 90%, enhancing the overallrobustness and reliability of the software.</p>
-                  <p className="text-m">~ Revamped Harness documentation and authored knowledge based articles forinclusion in the Harness Developer hub, enhancing user understanding and community engagement.</p>
-                  <p className="text-m">~ Languages and technologies being used Java, Spring Boot, Junit, Mockito, Docker, Microservices, Selenium, Rest Assured, Testim, Cypress, Jira, GitHub.</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-gray-800 p-4 rounded-lg border-4 border-yellow-500 bg-[#1A1E1E] text-white">
-              <div className="flex items-center gap-2">
-                <img
-                  alt="Company Logo"
-                  className="rounded-full"
-                  height="60"
-                  src="/evigway-logo.jpeg"
-                  style={{
-                    aspectRatio: "80/80",
-                    objectFit: "cover",
-                  }}
-                  width="60"
-                />
-                <h3 className="text-2xl font-bold sm:text-2xl md:text-2xl text-white">Evigway Technologies Pvt. Ltd.</h3>
-              </div>
-              <p className="text-xl font-bold">Software Engineer Intern</p>
-              <div className="flex items-center gap-2">
-                <div>
-                  <p className="text-l">January, 2023 - June, 2023 || Gurugram, Hrayana, India</p>
-                  <p className="text-m">~ Developed and implemented an automated route planning model for VVIP convoys, integrating geospatial data, threat object detection, crowd management, and lane segmentation. Enhanced security through real-time System updates, secure communication, and continuous improvement measures.</p>
-                  <p className="text-m">~ Developed an AI Border Surveillance system forthe Indian Army, integrating object detection, people counting, and face recognition. The system operates on drones, thermal, and optical cameras, bolstering security measures in border areas through advanced monitoring and threat detection capabilities.</p>
-                  <p className="text-m">~ Languages and technologies being used Python, Machine Learning, Deep Learning, Tensorflow, Pytorch, LLMs, Yolov8, DeepFace, RetinaFace, ArcFace, OpenCV, Docker, GitHub.</p>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="grid gap-4 px-4 md:px-6">
-          <div className="space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white ">Contact Me</h2>
-            <p className="max-w-prose text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 text-white">
-              Reach out to me via:
-            </p>
-          </div>
-          <div className="flex items-center gap-2">
-                <img
-                  alt="Company Logo"
-                  className="rounded-full"
-                  height="60"
-                  src="/social.png"
-                  style={{
-                    aspectRatio: "80/80",
-                    objectFit: "cover",
-                  }}
-                  width="60"
-                />
-                <Link className="text-2xl font-bold sm:text-2xl md:text-2xl text-white" href="https://www.linkedin.com/in/apoorv-arora-0903681a1/">apoorv-arora</Link>
-              </div>
-              <div className="flex items-center gap-2">
-                <img
-                  alt="Company Logo"
-                  className="rounded-full"
-                  height="60"
-                  src="/gmail.png"
-                  style={{
-                    aspectRatio: "80/80",
-                    objectFit: "cover",
-                  }}
-                  width="60"
-                />
-                <div className="text-2xl font-bold sm:text-2xl md:text-2xl text-white">apoorvarora3110@gmail.com</div>
-              </div>
-              <div className="flex items-center gap-2">
-                <img
-                  alt="Company Logo"
-                  className="rounded-full"
-                  height="60"
-                  src="/call.png"
-                  style={{
-                    aspectRatio: "80/80",
-                    objectFit: "cover",
-                  }}
-                  width="60"
-                />
-                <div className="text-2xl font-bold sm:text-2xl md:text-2xl text-white">+91-7300823494</div>
-              </div>
-              <div className="flex items-center gap-2">
-                <img
-                  alt="Company Logo"
-                  className="rounded-full"
-                  height="60"
-                  src="/instagram.png"
-                  style={{
-                    aspectRatio: "80/80",
-                    objectFit: "cover",
-                  }}
-                  width="60"
-                />
-                <Link className="text-2xl font-bold sm:text-2xl md:text-2xl text-white" href="https://www.instagram.com/ig.arora_?igsh=Y25qa3Z3bm5tYWFn&utm_source=qr">ig.arora_</Link>
-              </div>
-        </section>
-      </main>
-      {/* <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-gradient-to-t from-gray-700 to-gray-800">
-        <p className="text-xs text-gray-500 dark:text-gray-400 text-white">© 2024 Acme Inc. All rights reserved.</p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4 text-white" href="#">
-            Terms of Service
-          </Link>
-          <Link className="text-xs hover:underline underline-offset-4 text-white" href="#">
-            Privacy
-          </Link>
-        </nav>
-      </footer> */}
-    </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-cyan-500/5 to-purple-500/5 pointer-events-none" />
+      {children}
+    </motion.div>
   )
 }
 
+/* ===========================
+   FINTECH CARD HEADING
+=========================== */
+const CardHeading = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <motion.h3
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="
+        text-2xl font-extrabold
+        bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400
+        text-transparent bg-clip-text
+        drop-shadow-[0_6px_20px_rgba(16,185,129,0.6)]
+      "
+      style={{
+        WebkitTextStroke: "0.5px rgba(255,255,255,0.3)",
+        textShadow: `
+          0px 4px 15px rgba(16,185,129,0.5),
+          0px 8px 25px rgba(20,184,166,0.4)
+        `,
+      }}
+      whileHover={{ scale: 1.05 }}
+    >
+      {children}
+    </motion.h3>
+  )
+}
+
+/* ===========================
+   AURORA SECTION HEADING
+=========================== */
+const SectionHeading = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <motion.h2
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="
+        text-5xl md:text-6xl font-black mb-14
+        bg-gradient-to-r from-fuchsia-400 via-cyan-400 to-emerald-400
+        text-transparent bg-clip-text
+        drop-shadow-[0_8px_30px_rgba(0,255,200,0.4)]
+      "
+      style={{
+        WebkitTextStroke: "1px rgba(255,255,255,0.15)",
+      }}
+      whileHover={{
+        scale: 1.05,
+        rotateX: 5,
+        rotateY: -5,
+      }}
+    >
+      {children}
+    </motion.h2>
+  )
+}
+
+const GradientListItem = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <motion.li
+      whileHover={{ 
+        x: 8, 
+        scale: 1.02 
+      }}
+      animate={{ backgroundPosition: ["0% center", "100% center"] }}
+      transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+
+      className="
+        relative leading-relaxed text-[16px] 
+        list-disc ml-2
+        bg-gradient-to-r 
+        from-emerald-300 
+        via-cyan-300 
+        via-sky-300 
+        to-fuchsia-300
+        text-transparent bg-clip-text
+        marker:text-emerald-400
+        transition-all duration-500
+        hover:drop-shadow-[0_0_12px_rgba(34,211,238,0.7)]
+      "
+      style={{
+        backgroundSize: "200% auto",
+      }}
+      whileTap={{ scale: 0.98 }}
+    >
+      {children}
+    </motion.li>
+  )
+}
+
+const SkillBadge = ({ children, color }: { children: React.ReactNode, color: string }) => {
+  return (
+    <motion.span
+      whileHover={{ scale: 1.08 }}
+      transition={{ type: "spring", stiffness: 300 }}
+      className={`
+        px-4 py-2 rounded-full text-sm font-semibold
+        border backdrop-blur-md
+        ${color}
+        shadow-lg transition-all duration-300
+      `}
+    >
+      {children}
+    </motion.span>
+  )
+}
+
+
+
+
+export default function Component() {
+  return (
+    <div className="relative min-h-screen bg-black text-white overflow-hidden">
+
+      {/* Aurora Background */}
+      <div className="absolute w-[700px] h-[700px] bg-emerald-500 rounded-full blur-[220px] opacity-20 top-[-250px] left-[-250px]" />
+      <div className="absolute w-[600px] h-[600px] bg-cyan-500 rounded-full blur-[220px] opacity-20 bottom-[-250px] right-[-250px]" />
+      <div className="absolute w-[500px] h-[500px] bg-fuchsia-500 rounded-full blur-[200px] opacity-10 top-[30%] left-[40%]" />
+
+      {/* HEADER */}
+      <header className="relative z-10 px-6 h-16 flex items-center backdrop-blur-md bg-white/5 border-b border-white/10">
+        <img
+          src="/profile-pic.png"
+          alt="Profile"
+          className="w-10 h-10 rounded-full object-cover ring-2 ring-emerald-400"
+        />
+
+        <nav className="ml-auto flex gap-6">
+
+  {/* GitHub */}
+  <motion.div whileHover={{ scale: 1.15, y: -3 }}>
+    <Link href="https://github.com/Mannu7587">
+      <div className="
+        p-2 rounded-full 
+        bg-white/90
+        backdrop-blur-md
+        border-2 border-emerald-400
+        shadow-[0_0_25px_rgba(16,185,129,0.6)]
+        transition-all duration-300
+        hover:shadow-[0_0_40px_rgba(16,185,129,0.9)]
+      ">
+        <img src="/github.png" className="w-8 h-8 rounded-full" />
+      </div>
+    </Link>
+  </motion.div>
+
+  {/* LeetCode */}
+  <motion.div whileHover={{ scale: 1.15, y: -3 }}>
+    <Link href="https://leetcode.com/Mannu7587/">
+      <div className="
+        p-2 rounded-full 
+        bg-white/90
+        border-2 border-emerald-400
+        shadow-[0_0_25px_rgba(16,185,129,0.6)]
+        transition-all duration-300
+        hover:shadow-[0_0_40px_rgba(16,185,129,0.9)]
+      ">
+        <img src="/leetcode.jpg" className="w-8 h-8 rounded-full" />
+      </div>
+    </Link>
+  </motion.div>
+
+  {/* Codeforces */}
+  <motion.div whileHover={{ scale: 1.15, y: -3 }}>
+    <Link href="https://codeforces.com/profile/arora.apoorv">
+      <div className="
+        p-2 rounded-full 
+        bg-white/90
+        border-2 border-emerald-400
+        shadow-[0_0_25px_rgba(16,185,129,0.6)]
+        transition-all duration-300
+        hover:shadow-[0_0_40px_rgba(16,185,129,0.9)]
+      ">
+        <img src="/codeforces.jpg" className="w-8 h-8 rounded-full" />
+      </div>
+    </Link>
+  </motion.div>
+
+</nav>
+
+      </header>
+
+      <main className="relative z-10 space-y-36 px-6 py-24 max-w-6xl mx-auto">
+
+        {/* HERO */}
+        <section className="grid md:grid-cols-2 gap-16 items-center">
+          <motion.img
+            src="/about-pic.png"
+            alt="Profile"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="w-80 h-80 rounded-full border-4 border-emerald-400 shadow-[0_0_50px_rgba(16,185,129,0.5)]"
+          />
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6"
+          >
+            <h1 className="text-6xl font-black bg-gradient-to-r from-emerald-400 via-cyan-400 to-fuchsia-400 text-transparent bg-clip-text">
+              Apoorv Arora
+            </h1>
+
+            <p className="text-2xl bg-gradient-to-r from-cyan-300 to-emerald-300 text-transparent bg-clip-text font-semibold">
+              Senior Software Engineer (SDE-2)
+            </p>
+
+            <p className="text-gray-300 leading-relaxed text-lg">
+              Senior Software Engineer with 3+ years of experience designing scalable backend systems across SaaS, FinTech, and AI-driven enterprise platforms. 
+              Specialized in Java and Spring Boot microservices, infrastructure automation using Terraform, and production-grade AI systems including Retrieval-Augmented Generation (RAG). 
+              Strong focus on reliability, performance optimization, and end-to-end feature ownership.
+            </p>
+
+            <Button className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:scale-105 transition text-white font-semibold shadow-lg">
+              <Link
+                href="https://drive.google.com/file/d/19A6XmWKGwAId-WaVWtIrmV14iUnWqmml/view?usp=sharing"
+                target="_blank"
+              >
+                Download CV
+              </Link>
+            </Button>
+          </motion.div>
+        </section>
+
+        {/* EDUCATION */}
+        <section>
+          <SectionHeading>Education</SectionHeading>
+          <Card>
+            <div className="flex gap-6 mb-6">
+              <img
+                src="/project-1.png"
+                alt="NIT Uttarakhand Logo"
+                className="w-16 h-16 bg-white rounded-xl p-2 object-contain"
+              />
+              <div>
+                <CardHeading>
+                  National Institute of Technology (NIT), Uttarakhand
+                </CardHeading>
+                <p className="text-lg font-semibold bg-gradient-to-r from-sky-400 via-indigo-400 to-violet-400 text-transparent bg-clip-text">
+                  Bachelor of Technology – Electrical & Electronics Engineering
+                </p>
+                <p className="text-lg font-semibold bg-gradient-to-r from-sky-400 via-indigo-400 to-violet-400 text-transparent bg-clip-text">
+                  August 2019 – June 2023
+                </p>
+                <p className="mt-2 inline-block px-4 py-1 rounded-full 
+              bg-emerald-500/10 border border-emerald-400/30
+              text-emerald-300 font-semibold
+              shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+                  CGPA: 7.32 / 10
+                </p>
+              </div>
+            </div>
+            <ul className="list-disc ml-6 space-y-3 text-gray-300 leading-relaxed">
+              <GradientListItem>Served as Student Placement Representative, coordinating campus recruitment activities between companies and students.</GradientListItem>
+              <GradientListItem>General Secretary – Adventure Club, leading institute-level events and managing cross-functional teams.</GradientListItem>
+              <GradientListItem>Vice President – Newton School Coding Club, mentoring students in Data Structures and Competitive Programming.</GradientListItem>
+              <GradientListItem>Active participation in technical competitions, leadership roles, and collaborative initiatives.</GradientListItem>
+            </ul>
+          </Card>
+        </section>
+
+        {/* SKILLS */}
+<section>
+  <SectionHeading>Skills</SectionHeading>
+
+  <div className="grid md:grid-cols-2 gap-10">
+
+    {/* Languages */}
+    <Card>
+      <CardHeading>Languages</CardHeading>
+      <div className="flex flex-wrap gap-3 mt-6">
+        <SkillBadge color="bg-emerald-500/10 text-emerald-300 border-emerald-400/30 hover:shadow-emerald-500/40">
+          Java
+        </SkillBadge>
+        <SkillBadge color="bg-cyan-500/10 text-cyan-300 border-cyan-400/30 hover:shadow-cyan-500/40">
+          Python
+        </SkillBadge>
+        <SkillBadge color="bg-sky-500/10 text-sky-300 border-sky-400/30 hover:shadow-sky-500/40">
+          SQL
+        </SkillBadge>
+      </div>
+    </Card>
+
+    {/* Frontend */}
+    <Card>
+      <CardHeading>Frontend</CardHeading>
+      <div className="flex flex-wrap gap-3 mt-6">
+        {["CSS", "HTML", "Javascript", "Bootstrap", "Tailwind CSS", "React.js"].map((skill) => (
+          <SkillBadge
+            key={skill}
+            color="bg-fuchsia-500/10 text-fuchsia-300 border-fuchsia-400/30 hover:shadow-fuchsia-500/40"
+          >
+            {skill}
+          </SkillBadge>
+        ))}
+      </div>
+    </Card>
+
+    {/* Backend */}
+    <Card>
+      <CardHeading>Backend</CardHeading>
+      <div className="flex flex-wrap gap-3 mt-6">
+        {["SpringBoot", "Django", "Flask"].map((skill) => (
+          <SkillBadge
+            key={skill}
+            color="bg-emerald-500/10 text-emerald-300 border-emerald-400/30 hover:shadow-emerald-500/40"
+          >
+            {skill}
+          </SkillBadge>
+        ))}
+      </div>
+    </Card>
+
+    {/* AI & Data Science */}
+    <Card>
+      <CardHeading>AI & Data Science</CardHeading>
+      <div className="flex flex-wrap gap-3 mt-6">
+        {[
+          "DeepLearning",
+          "Pytorch",
+          "TensorFlow",
+          "YOLOv8",
+          "DeepFace",
+          "Hugging Face",
+          "LLM",
+          "Computer Vision Models"
+        ].map((skill) => (
+          <SkillBadge
+            key={skill}
+            color="bg-cyan-500/10 text-cyan-300 border-cyan-400/30 hover:shadow-cyan-500/40"
+          >
+            {skill}
+          </SkillBadge>
+        ))}
+      </div>
+    </Card>
+
+    {/* Tools & Technologies */}
+    <Card>
+      <CardHeading>Tools & Technologies</CardHeading>
+      <div className="flex flex-wrap gap-3 mt-6">
+        {[
+          "CI/CD",
+          "Jenkins",
+          "Docker",
+          "GitHub",
+          "Terraform",
+          "AWS",
+          "MySQL",
+          "Rest Assured",
+          "Cypress",
+          "n8n",
+          "PowerBI"
+        ].map((skill) => (
+          <SkillBadge
+            key={skill}
+            color="bg-indigo-500/10 text-indigo-300 border-indigo-400/30 hover:shadow-indigo-500/40"
+          >
+            {skill}
+          </SkillBadge>
+        ))}
+      </div>
+    </Card>
+
+    {/* Soft Skills */}
+    <Card>
+      <CardHeading>Soft Skills</CardHeading>
+      <div className="flex flex-wrap gap-3 mt-6">
+        {[
+          "Leadership",
+          "Collaboration",
+          "Negotiation",
+          "Strategic Thinking",
+          "Problem Solving"
+        ].map((skill) => (
+          <SkillBadge
+            key={skill}
+            color="bg-rose-500/10 text-rose-300 border-rose-400/30 hover:shadow-rose-500/40"
+          >
+            {skill}
+          </SkillBadge>
+        ))}
+      </div>
+    </Card>
+
+  </div>
+</section>
+
+
+        
+
+        {/* EXPERIENCE */}
+<section>
+  <SectionHeading>Professional Experience</SectionHeading>
+
+  <div className="space-y-12">
+
+    {/* UKG */}
+    <Card>
+      <div className="flex gap-6 mb-6">
+        <img src="/ukg.png" className="w-16 h-16 bg-white rounded-xl p-2 object-contain" />
+        <div>
+          <CardHeading>Ultimate Kronos Group (UKG)</CardHeading>
+          <p className="text-lg font-semibold bg-gradient-to-r from-sky-400 via-indigo-400 to-violet-400 text-transparent bg-clip-text">Senior Software Engineer (SDE-2)</p>
+          <p className="text-lg font-semibold bg-gradient-to-r from-sky-400 via-indigo-400 to-violet-400 text-transparent bg-clip-text">April 2025 – Present | Noida, India</p>
+        </div>
+      </div>
+
+      <ul className="list-disc ml-6 space-y-4 text-gray-400 leading-relaxed">
+
+        <GradientListItem>
+          Led enterprise-wide migration of multiple production services from Java 8 to Java 17, 
+          refactoring legacy modules, resolving deep dependency conflicts, upgrading deprecated APIs, 
+          and improving overall runtime performance, memory efficiency, and long-term maintainability.
+        </GradientListItem>
+
+        <GradientListItem>
+          Owned the Employment Term feature end-to-end across backend services, 
+          optimizing REST APIs, improving database query performance, debugging high-impact production issues, 
+          and reducing customer-reported defects by 60% through systematic root-cause analysis and automation improvements.
+        </GradientListItem>
+
+        <GradientListItem>
+          Designed and implemented automated ETL pipelines to aggregate and transform usage analytics data, 
+          feeding Power BI dashboards and eliminating manual reporting workflows, 
+          improving analytics delivery speed by 80% and increasing data reliability.
+        </GradientListItem>
+
+        <GradientListItem>
+          Developed a Retrieval-Augmented Generation (RAG) based Jira assistant that leverages embeddings and contextual retrieval 
+          to summarize issue discussions and surface historically similar tickets, significantly reducing issue triage time and accelerating customer resolution cycles.
+        </GradientListItem>
+
+        <GradientListItem>
+          Spearheaded CI/CD stabilization initiatives by enhancing automation frameworks, 
+          fixing flaky test pipelines, improving build reliability, and enabling smoother release cycles across environments.
+        </GradientListItem>
+
+      </ul>
+    </Card>
+
+    {/* EDUVANZ */}
+    <Card>
+      <div className="flex gap-6 mb-6">
+        <img src="/Eduvanz-logo.jpg" className="w-16 h-16 bg-white rounded-xl p-2 object-contain" />
+        <div>
+          <CardHeading>Eduvanz Finance</CardHeading>
+          <p className="text-lg font-semibold bg-gradient-to-r from-sky-400 via-indigo-400 to-violet-400 text-transparent bg-clip-text">Software Engineer (SDE-1)</p>
+          <p className="text-lg font-semibold bg-gradient-to-r from-sky-400 via-indigo-400 to-violet-400 text-transparent bg-clip-text">June 2024 – February 2025 | Mumbai, India</p>
+        </div>
+      </div>
+
+      <ul className="list-disc ml-6 space-y-4 text-gray-400 leading-relaxed">
+
+        <GradientListItem>
+          Automated AWS infrastructure provisioning using Terraform (Infrastructure as Code), 
+          eliminating manual configuration steps and reducing deployment time from 3 hours to 30 minutes (83% improvement).
+        </GradientListItem>
+
+        <GradientListItem>
+          Implemented real-time observability and monitoring dashboards using Grafana, 
+          enabling proactive issue detection, performance tracking, and improved system reliability across services.
+        </GradientListItem>
+
+        <GradientListItem>
+          Designed and maintained Jenkins-based CI/CD pipelines for Salesforce deployments, 
+          automating pull requests, validation tests, code reviews, and seamless sandbox-to-production releases.
+        </GradientListItem>
+
+        <GradientListItem>
+          Led migration of over 1 million records from legacy monolithic systems to third-party platforms 
+          using optimized SQL queries and Redshift transformations, ensuring zero data loss and data consistency.
+        </GradientListItem>
+
+        <GradientListItem>
+          Strengthened system security by implementing secure authentication mechanisms 
+          and integrating with Identity Providers (IDPs), enhancing compliance and access management.
+        </GradientListItem>
+
+      </ul>
+    </Card>
+
+    {/* HARNESS */}
+    <Card>
+      <div className="flex gap-6 mb-6">
+        <img src="/Harness-logo.jpeg" className="w-16 h-16 bg-white rounded-xl p-2 object-contain" />
+        <div>
+          <CardHeading>Harness.io</CardHeading>
+          <p className="text-lg font-semibold bg-gradient-to-r from-sky-400 via-indigo-400 to-violet-400 text-transparent bg-clip-text">Software Engineer (SDE-1)</p>
+          <p className="text-lg font-semibold bg-gradient-to-r from-sky-400 via-indigo-400 to-violet-400 text-transparent bg-clip-text">July 2023 – May 2024 | Bengaluru, India</p>
+        </div>
+      </div>
+
+      <ul className="list-disc ml-6 space-y-4 text-gray-400 leading-relaxed">
+
+        <GradientListItem>
+          Contributed to end-to-end feature development within the Harness Next Gen platform, 
+          including backend implementation, test plan creation, execution validation, and release readiness.
+        </GradientListItem>
+
+        <GradientListItem>
+          Improved unit and integration test coverage from 60% to 90% across multiple modules 
+          by introducing structured test cases, automation workflows, and debugging production defects.
+        </GradientListItem>
+
+        <GradientListItem>
+          Participated in on-call rotations handling production incidents, 
+          identifying root causes, implementing hotfixes, and ensuring system stability in customer-facing environments.
+        </GradientListItem>
+
+        <GradientListItem>
+          Authored detailed technical documentation and knowledge base articles 
+          for the Harness Developer Hub, improving user onboarding and developer experience.
+        </GradientListItem>
+
+      </ul>
+    </Card>
+
+    {/* EVIGWAY */}
+    <Card>
+      <div className="flex gap-6 mb-6">
+        <img src="/evigway-logo.jpeg" className="w-16 h-16 bg-white rounded-xl p-2 object-contain" />
+        <div>
+          <CardHeading>Evigway Technologies Pvt. Ltd.</CardHeading>
+          <p className="text-lg font-semibold bg-gradient-to-r from-sky-400 via-indigo-400 to-violet-400 text-transparent bg-clip-text">Software Engineer Intern</p>
+          <p className="text-lg font-semibold bg-gradient-to-r from-sky-400 via-indigo-400 to-violet-400 text-transparent bg-clip-text">January 2023 – June 2023 | Gurugram, India</p>
+        </div>
+      </div>
+
+      <ul className="  list-disc ml-6 space-y-3  text-slate-300 leading-relaxed text-[16px]  marker:text-emerald-400">
+
+        <GradientListItem>
+          Developed an AI-powered border surveillance system integrating YOLOv8, DeepFace, and OpenCV 
+          for real-time object detection, facial recognition, and threat identification.
+        </GradientListItem>
+
+        <GradientListItem>
+          Built an automated VVIP convoy route planning system leveraging geospatial intelligence, 
+          threat detection algorithms, and dynamic routing strategies to enhance security operations.
+        </GradientListItem>
+
+        <GradientListItem>
+          Implemented drone-based monitoring pipelines utilizing thermal and optical camera feeds, 
+          enabling enhanced situational awareness and real-time surveillance capabilities.
+        </GradientListItem>
+
+      </ul>
+    </Card>
+
+  </div>
+</section>
+
+{/* ACHIEVEMENTS */}
+        <section>
+          <SectionHeading>Achievements</SectionHeading>
+          <Card>
+            <ul className="list-disc ml-6 space-y-3 text-gray-300 leading-relaxed">
+              <GradientListItem>Finalist – Valorant E-Sports Championship, Rendezvous IIT Delhi (2023).</GradientListItem>
+              <GradientListItem>1st Place – Intra NIT Valorant Championship (2022).</GradientListItem>
+              <GradientListItem>2nd Place – Intra NIT Volleyball Tournament (2022).</GradientListItem>
+              <GradientListItem>Participant – Inter NIT Football Tournament, NIT Uttarakhand (2020).</GradientListItem>
+              <GradientListItem>Runner-Up – Photography Contest, NIT Uttarakhand (2019).</GradientListItem>
+            </ul>
+          </Card>
+        </section>
+
+
+        
+
+        {/* CONTACT */}
+        <section>
+          <SectionHeading>Contact</SectionHeading>
+          <Card>
+  <div className="space-y-8">
+
+    {/* LinkedIn */}
+    <motion.div 
+      whileHover={{ x: 6, scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 200 }}
+      className="flex items-center gap-4 group"
+    >
+      <img 
+        src="/social.png" 
+        className="w-8 h-8 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]" 
+      />
+      <Link 
+        href="https://www.linkedin.com/in/apoorv-arora-0903681a1/"
+        className="
+          bg-gradient-to-r from-cyan-300 via-sky-300 to-emerald-300
+          text-transparent bg-clip-text
+          font-semibold
+          hover:drop-shadow-[0_0_12px_rgba(34,211,238,0.8)]
+          transition-all duration-300
+        "
+      >
+        linkedin.com/in/apoorv-arora
+      </Link>
+    </motion.div>
+
+    {/* Email */}
+    <motion.div 
+      whileHover={{ x: 6, scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 200 }}
+      className="flex items-center gap-4 group"
+    >
+      <img 
+        src="/gmail.png" 
+        className="w-8 h-8 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)]" 
+      />
+      <p className="
+        bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300
+        text-transparent bg-clip-text
+        font-semibold
+        hover:drop-shadow-[0_0_12px_rgba(16,185,129,0.8)]
+        transition-all duration-300
+      ">
+        apoorvarora3110@gmail.com
+      </p>
+    </motion.div>
+
+    {/* Phone */}
+    <motion.div 
+      whileHover={{ x: 6, scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 200 }}
+      className="flex items-center gap-4 group"
+    >
+      <img 
+        src="/call.png" 
+        className="w-8 h-8 transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]" 
+      />
+      <p className="
+        bg-gradient-to-r from-fuchsia-300 via-purple-300 to-indigo-300
+        text-transparent bg-clip-text
+        font-semibold
+        hover:drop-shadow-[0_0_12px_rgba(168,85,247,0.8)]
+        transition-all duration-300
+      ">
+        +91-7300823494
+      </p>
+    </motion.div>
+
+  </div>
+</Card>
+
+        </section>
+
+        
+        
+
+      </main>
+    </div>
+  )
+}
