@@ -242,11 +242,32 @@ export default function Component() {
               Senior Software Engineer (SDE-2)
             </p>
 
-            <p className="text-gray-300 leading-relaxed text-lg">
-              Senior Software Engineer with 3+ years of experience designing scalable backend systems across SaaS, FinTech, and AI-driven enterprise platforms. 
-              Specialized in Java and Spring Boot microservices, infrastructure automation using Terraform, and production-grade AI systems including Retrieval-Augmented Generation (RAG). 
-              Strong focus on reliability, performance optimization, and end-to-end feature ownership.
-            </p>
+            <motion.p
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="
+    text-lg leading-relaxed
+    bg-gradient-to-r 
+    from-slate-200 
+    via-cyan-200 
+    to-emerald-200
+    text-transparent bg-clip-text
+    drop-shadow-[0_2px_10px_rgba(16,185,129,0.4)]
+  "
+>
+  Senior Software Engineer with 3+ years of experience designing scalable backend systems across 
+  <span className="text-emerald-300 font-semibold"> SaaS</span>, 
+  <span className="text-cyan-300 font-semibold"> FinTech</span>, and 
+  <span className="text-fuchsia-300 font-semibold"> AI-driven enterprise platforms</span>. 
+  Specialized in 
+  <span className="text-emerald-300 font-semibold"> Java</span> and 
+  <span className="text-cyan-300 font-semibold"> Spring Boot microservices</span>, 
+  infrastructure automation using 
+  <span className="text-indigo-300 font-semibold"> Terraform</span>, and production-grade AI systems including 
+  <span className="text-fuchsia-300 font-semibold"> Retrieval-Augmented Generation (RAG)</span>. 
+  Strong focus on reliability, performance optimization, and end-to-end feature ownership.
+</motion.p>
 
             <Button className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:scale-105 transition text-white font-semibold shadow-lg">
               <Link
