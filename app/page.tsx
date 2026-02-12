@@ -271,7 +271,7 @@ export default function Component() {
 
             <Button className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:scale-105 transition text-white font-semibold shadow-lg">
               <Link
-                href="https://drive.google.com/file/d/19A6XmWKGwAId-WaVWtIrmV14iUnWqmml/view?usp=sharing"
+                href="https://drive.google.com/file/d/1WlpqqtBeG4E-bkPairV2WVzejqbg_ByY/view?usp=sharing"
                 target="_blank"
               >
                 Download CV
